@@ -1,14 +1,29 @@
+/* 기본 스타일 */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
-}
-main, header, footer {
-  margin-left: 20%;
+  display: block; /* 기본적으로 열려있음 */
 }
 
-/* 기본 스타일 */
+header {
+  position: fixed;
+  top: 0;
+  left: 20%; /* 필요에 따라 조정 */
+  width: 80%; /* 필요에 따라 조정 */
+  z-index: 1000; /* 다른 콘텐츠보다 위에 위치 */
+}
+
+header button {
+  visibility: hidden;
+}
+
+main, footer {
+  margin-left: 20%;
+  margin-top: 80px; /* 고정된 헤더 아래에 위치하도록 조정 */
+}
+
 nav ul li a {
   font-size: 1rem; /* 16px */
 }
@@ -16,18 +31,28 @@ nav ul li a {
 /* 미디어 쿼리를 사용하여 반응형 글자 크기 조정 */
 @media (max-width: 768px) {
   nav ul li a {
-    font-size: 0.75rem; /* 14px */
+    font-size: 0.75rem;
   }
 }
 
 @media (max-width: 568px) {
-  nav ul li a {
-    font-size: 0.5rem; /* 12px */
-  }
   nav {
-    display: none;
+    display: none; /* 화면 크기가 568px 이하일 때 기본적으로 숨김 */
   }
-  main, header, footer {
+  nav.open {
+    display: block; /* .open 클래스가 추가되면 표시 */
+    width: 50%;
+    z-index: 1200;
+  }
+  header {
+    left: 0%; /* 필요에 따라 조정 */
+    width: 100%; /* 필요에 따라 조정 */
+    z-index: 1000; /* 다른 콘텐츠보다 위에 위치 */
+  }
+  main, footer {
     margin-left: 0%;
+  }
+  header button {
+    visibility: visible;
   }
 }
