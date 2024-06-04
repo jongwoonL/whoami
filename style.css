@@ -7,14 +7,6 @@ nav {
   display: block; /* 기본적으로 열려있음 */
 }
 
-header {
-  position: sticky;
-  top: 0;
-  left: 20%; /* 필요에 따라 조정 */
-  width: 80%; /* 필요에 따라 조정 */
-  z-index: 1000; /* 다른 콘텐츠보다 위에 위치 */
-}
-
 button {
   visibility: hidden;
 }
@@ -31,7 +23,6 @@ nav ul li a {
   float: right;
 }
 
-
 /* 미디어 쿼리를 사용하여 반응형 글자 크기 조정 */
 @media (max-width: 768px) {
   nav ul li a {
@@ -47,11 +38,6 @@ nav ul li a {
     display: block; /* .open 클래스가 추가되면 표시 */
     width: 50%;
     z-index: 1200;
-  }
-  header {
-    left: 0%; /* 필요에 따라 조정 */
-    width: 100%; /* 필요에 따라 조정 */
-    z-index: 1000; /* 다른 콘텐츠보다 위에 위치 */
   }
   main, footer {
     margin-left: 0%;
