@@ -7,10 +7,6 @@ nav {
   display: block; /* 기본적으로 열려있음 */
 }
 
-button {
-  visibility: hidden;
-}
-
 main, footer {
   margin-left: 20%;
 }
@@ -21,6 +17,7 @@ nav ul li a {
 
 #nav-toggle {
   float: right;
+  visibility: hidden;
 }
 
 /* 미디어 쿼리를 사용하여 반응형 글자 크기 조정 */
@@ -42,7 +39,7 @@ nav ul li a {
   main, footer {
     margin-left: 0%;
   }
-  button {
+  #nav-toggle {
     visibility: visible;
   }
 }
